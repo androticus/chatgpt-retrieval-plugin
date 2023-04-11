@@ -24,47 +24,53 @@ This README provides detailed information on how to set up, develop, and deploy 
 
 ## Table of Contents
 
-- [Quickstart](#quickstart)
-- [About](#about)
-  - [Plugins](#plugins)
-  - [Retrieval Plugin](#retrieval-plugin)
-  - [Memory Feature](#memory-feature)
-  - [Security](#security)
-  - [API Endpoints](#api-endpoints)
-- [Development](#development)
-  - [Setup](#setup)
-    - [General Environment Variables](#general-environment-variables)
-  - [Choosing a Vector Database](#choosing-a-vector-database)
-    - [Pinecone](#pinecone)
-    - [Weaviate](#weaviate)
-    - [Zilliz](#zilliz)
-    - [Milvus](#milvus)
-    - [Qdrant](#qdrant)
-    - [Redis](#redis)
-  - [Running the API Locally](#running-the-api-locally)
-  - [Testing a Localhost Plugin in ChatGPT](#testing-a-localhost-plugin-in-chatgpt)
-  - [Personalization](#personalization)
-  - [Authentication Methods](#authentication-methods)
-- [Deployment](#deployment)
-- [Installing a Developer Plugin](#installing-a-developer-plugin)
-- [Webhooks](#webhooks)
-- [Scripts](#scripts)
-- [Limitations](#limitations)
-- [Contributors](#contributors)
-- [Future Directions](#future-directions)
+- [ChatGPT Retrieval Plugin](#chatgpt-retrieval-plugin)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [Quickstart](#quickstart)
+    - [Testing in ChatGPT](#testing-in-chatgpt)
+  - [About](#about)
+    - [Plugins](#plugins)
+    - [Retrieval Plugin](#retrieval-plugin)
+    - [Memory Feature](#memory-feature)
+    - [Security](#security)
+    - [API Endpoints](#api-endpoints)
+  - [Development](#development)
+    - [Setup](#setup)
+      - [General Environment Variables](#general-environment-variables)
+    - [Choosing a Vector Database](#choosing-a-vector-database)
+      - [Pinecone](#pinecone)
+      - [Weaviate](#weaviate)
+      - [Zilliz](#zilliz)
+      - [Milvus](#milvus)
+      - [Qdrant](#qdrant)
+      - [Redis](#redis)
+      - [LlamaIndex](#llamaindex)
+    - [Running the API locally](#running-the-api-locally)
+    - [Testing a Localhost Plugin in ChatGPT](#testing-a-localhost-plugin-in-chatgpt)
+    - [Personalization](#personalization)
+    - [Authentication Methods](#authentication-methods)
+  - [Deployment](#deployment)
+  - [Installing a Developer Plugin](#installing-a-developer-plugin)
+  - [Webhooks](#webhooks)
+  - [Scripts](#scripts)
+  - [Limitations](#limitations)
+  - [Future Directions](#future-directions)
+  - [Contributors](#contributors)
 
 ## Quickstart
 
 Follow these steps to quickly set up and run the ChatGPT Retrieval Plugin:
 
-1. Install Python 3.10, if not already installed.
+1. Install Python 3.11, if not already installed.
 2. Clone the repository: `git clone https://github.com/openai/chatgpt-retrieval-plugin.git`
 3. Navigate to the cloned repository directory: `cd /path/to/chatgpt-retrieval-plugin`
-4. Install poetry: `pip install poetry`
-5. Create a new virtual environment with Python 3.10: `poetry env use python3.10`
-6. Activate the virtual environment: `poetry shell`
-7. Install app dependencies: `poetry install`
-8. Set the required environment variables:
+4. Install poetry: `pip install poetry` NO USE:
+5. `curl -sSL https://install.python-poetry.org | python3`
+6. Create a new virtual environment with Python 3.11: `poetry env use python3.11`
+7. Activate the virtual environment: `poetry shell`
+8. Install app dependencies: `poetry install`
+9. Set the required environment variables:
 
    ```
    export DATASTORE=<your_datastore>
@@ -121,8 +127,8 @@ Follow these steps to quickly set up and run the ChatGPT Retrieval Plugin:
    export REDIS_INDEX_TYPE=<your_redis_index_type>
    ```
 
-9. Run the API locally: `poetry run start`
-10. Access the API documentation at `http://0.0.0.0:8000/docs` and test the API endpoints (make sure to add your bearer token).
+10. Run the API locally: `poetry run start`
+11. Access the API documentation at `http://0.0.0.0:8000/docs` and test the API endpoints (make sure to add your bearer token).
 
 ### Testing in ChatGPT
 
