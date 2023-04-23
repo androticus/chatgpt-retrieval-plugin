@@ -4,12 +4,12 @@
 
 export DATASTORE=pinecone
 export BEARER_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-export OPENAI_API_KEY=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
+export OPENAI_API_KEY=<do not store key in a public place>
 
 # Add the environment variables for your chosen vector DB.
 # Some of these are optional; read the provider's setup docs in /docs/providers for more information.
 
 # Pinecone
-export PINECONE_API_KEY=f34729f5-61c7-41fe-9650-00a469de1013
-export PINECONE_ENVIRONMENT=asia-southeast1-gcp
+export PINECONE_API_KEY=<pinecone key>
+export PINECONE_ENVIRONMENT=<environment>
 export PINECONE_INDEX=chatgpt-retrieval-plugin
